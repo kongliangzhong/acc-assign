@@ -1,0 +1,31 @@
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <h2>{{.Name}} </h2>
+
+    <div id="data-list-div">
+      <table>
+        <tr>
+          {{ range $col := .Columns }}
+          <th>{{$col}}</th>
+          {{end}}
+        </tr>
+
+        {{ range $data := .DataContents }}
+        <tr>
+          {{range $colVal := $data}}
+          <td>{{$colVal}}</td>
+          {{end}}
+        </tr>
+        {{ end }}
+      </table>
+    </div>
+
+    <br/>
+    <br/>
+    <div>pagination</div>
+  </body>
+</html>
